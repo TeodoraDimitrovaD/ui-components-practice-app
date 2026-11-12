@@ -1,0 +1,23 @@
+{
+  "name": "ui-components-practice-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeodoraDimitrovaD/ui-components-practice-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TeodoraDimitrovaD/ui-components-practice-app/issues"
+  },
+  "homepage": "https://github.com/TeodoraDimitrovaD/ui-components-practice-app#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6"
+  }
+}
