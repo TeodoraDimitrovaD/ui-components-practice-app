@@ -1,4 +1,5 @@
 import { expect, Page } from '@playwright/test';
+import { step } from '../helpers/test-step-decorator';
 
 export class DatepickerPage {
     private readonly page: Page;
@@ -6,8 +7,9 @@ export class DatepickerPage {
     constructor(page: Page) {
         this.page = page;
     }
-    
-// Method to select a date from the common datepicker and verify the selected date
+
+    // Method to select a date from the common datepicker and verify the selected date
+    @step
     async selectDateFromCommonDatePicker(daysFromToday: number) {
         const calendarInputField = this.page.getByPlaceholder('Form Picker');
         await calendarInputField.click();
@@ -17,7 +19,8 @@ export class DatepickerPage {
         await expect(calendarInputField).toHaveValue(expectedDateString);
     }
 
-// Method to select a date range from the datepicker with range and verify the selected dates
+    // Method to select a date range from the datepicker with range and verify the selected dates
+    @step
     async selectDatePickerWithRange(daysFromTodayStart: number, daysFromTodayEnd: number) {
         const calendarInputField = this.page.getByPlaceholder('Range Picker');
         await calendarInputField.click();
@@ -29,7 +32,7 @@ export class DatepickerPage {
         await expect(calendarInputField).toHaveValue(expectedDateRangeString);
     }
 
-// A private method to select a date in the calendar based on a given number of days from today
+    // A private method to select a date in the calendar based on a given number of days from today
     private async SelectDateInTheCalendar(daysFromToday: number) {
         const date = new Date();
         date.setDate(date.getDate() + daysFromToday);
